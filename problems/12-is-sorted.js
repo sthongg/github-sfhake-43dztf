@@ -10,9 +10,30 @@ isSorted([2, 4, 6, 7, 8]); // true
 isSorted([5, 4, 3, 2, 1]); // false
 ***********************************************************************/
 
+// solving iteratively
+// function isSortedIter(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > arr[i + 1]) {
+//       return false
+//     }
+//   }
+//   return true
+// }
 
 function isSorted(arr) {
   // Your code here 
+  if (arr.length < 2) {
+    return true
+  }
+  if (arr[0] > arr[1]) {
+    return false
+  }
+
+  // arr.shift() // one method if you don't wanna slice
+  // return isSorted(arr)
+
+  return isSorted(arr.slice(1))
+
 }
 
 
